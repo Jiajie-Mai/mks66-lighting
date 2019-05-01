@@ -34,7 +34,8 @@ def calculate_specular(light, sreflect, view, normal):
     pass
 
 def limit_color(color):
-    pass
+    for c in range(color):
+        c = max(min(c,255),0)
 
 #vector functions
 #normalize vetor, should modify the parameter
