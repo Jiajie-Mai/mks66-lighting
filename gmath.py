@@ -65,9 +65,12 @@ def calculate_specular(light, sreflect, view, normal):
     return limit_color(color)
 
 def limit_color(color):
-    for index, c in enumerate(color):
-        c = max(min(c,255),0)
-        color[index] = c
+    for index in range(len(color)):
+        color[index] = int(color[index])
+        if color[index] > 255:
+            color[index] = 255
+        elif color[index] < 0:
+            color[index] = 0
     return color
 
 #vector functions
